@@ -38,20 +38,25 @@
 % Title
 % ====================
 
-\title{Some fancy title: followed by some more text}
+\title{SeaIceRT: a python interface for a Delta-Eddington radiative transfer model}
 
-\author{Agajan Torayev \inst{1} \and Ben Bitdiddle \inst{2} \and Lem E. Tweakit \inst{2}}
+\author{Andrew P. Barrett \inst{1} \and Julienne Stroeve \inst{2} \and Bonnie Light \inst{3} \and Donald Perovich \inst{4}}
 
-\institute[shortinst]{\inst{1} Some Institute \samelineand \inst{2} Another Institute}
+\institute[shortinst]{
+  \inst{1} National Snow and Ice Data Center
+  \samelineand \inst{2} University of Manitoba
+  \samelineand \inst{3} Applied Physics Laboratory, University of Washington
+  \samelineand \inst{4} University of Dartmouth
+}
 
 % ====================
 % Footer (optional)
 % ====================
 
 \footercontent{
-  \href{https://www.example.com}{https://www.example.com} \hfill
-  ABC Conference 2025, New York --- XYZ-1234 \hfill
-  \href{mailto:agajan.torayev@example.com}{agajan.torayev@example.com}}
+  \href{https://github.com/andypbarrett/seaice\_radiative\_transfer}{https://github.com/andypbarrett/seaice\_radiative\_transfer} \hfill
+  Sea Ice Across Temporal and Spatial Scales, Bremerhavn, June 2023 \hfill
+  \href{mailto:andrew.barrett@colorado.edu}{andrew.barrett@colorado.edu}}
 % (can be left out to remove footer)
 
 
@@ -85,25 +90,24 @@
 
 \begin{column}{\colwidth}
 
-  \begin{block}{A block title}
+  \begin{block}{Summary}
 
-    Some block contents, followed by a diagram, followed by a dummy paragraph.
-
-    \begin{figure}
-      \centering
-      \begin{tikzpicture}[scale=6]
-        \draw[step=0.25cm,color=gray] (-1,-1) grid (1,1);
-        \draw (1,0) -- (0.2,0.2) -- (0,1) -- (-0.2,0.2) -- (-1,0)
-          -- (-0.2,-0.2) -- (0,-1) -- (0.2,-0.2) -- cycle;
-      \end{tikzpicture}
-      \caption{A figure caption.}
-    \end{figure}
-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultricies
-    eget libero ac ullamcorper. Integer et euismod ante. Aenean vestibulum
-    lobortis augue, ut lobortis turpis rhoncus sed. Proin feugiat nibh a
-    lacinia dignissim. Proin scelerisque, risus eget tempor fermentum, ex
-    turpis condimentum urna, quis malesuada sapien arcu eu purus.
+    SeaIceRT is a python interface for the single column
+    Delta-Eddington sea ice radiative transfer model from the Community Ice
+    CodE (CICE) sea ice model used in the NCAR Community Earth System Model
+    version 2 (CESM2). The python code provides a simple interface to the
+    underlying FORTRAN radiative transfer model. Model parameters and forcing
+    variables (ice thickness, snow depth and density, and melt pond depth) can
+    be set and explored from an interactive environment such as ipython or
+    Jupyter notebooks, as well as incorporated into python scripts to estimate
+    under-ice light over periods of time, along transects or for grids for the
+    Arctic Ocean. We demonstrate setting up and running the model for several
+    transects collected during the MOSAiC cruise and for estimating
+    phytoplankton bloom onset for the Arctic Ocean. We hope that the software
+    package provides a framework for both simplifying and expanding access to
+    these modelling tools. SeaIceRT is open source software. Documentation
+    and code can be found at
+    https://github.com/andypbarrett/seaice\_radiative\_transfer.
 
   \end{block}
 
