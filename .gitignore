@@ -1,0 +1,14 @@
+# .gitigore for Barrett_IGS_Bremen_2023
+
+poster.blg
+poster.bbl
+poster.out
+poster.vrb
+poster.toc
+poster.snm
+poster.nav
+poster.aux
+poster.fls
+poster.pdf
+poster.log
+poster.fdb_latexmk
