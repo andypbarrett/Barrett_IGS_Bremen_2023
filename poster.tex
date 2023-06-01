@@ -108,8 +108,7 @@
     Jupyter notebooks, as well as incorporated into python scripts to estimate
     under-ice light over periods of time, along transects or for grids for the
     Arctic Ocean. We demonstrate setting up and running the model for several
-    transects collected during the MOSAiC cruise and for estimating
-    phytoplankton bloom onset for the Arctic Ocean. We hope that the software
+    transects collected during the MOSAiC cruise. We hope that the software
     package provides a framework for both simplifying and expanding access to
     these modelling tools. SeaIceRT is open source software. Documentation
     and code can be found at
@@ -124,20 +123,25 @@
       \caption{The Arctic Sea Ice Ecosystem https://askabiologist.asu.edu/explore/frozen-life \copyright Arizona Board of Regents ASU Ask A Biologist.}
     \end{figure}
     
-    Sunlight transmitted through snow and sea ice to the upper ocean plays an
-    important role in regulating biological activity in Polar regions,
-    determining the timing of initiations of algal and phytoplankton blooms.
-    Measurements of under-ice photosynthetically active radiation (PAR) are
-    available from field campaigns and from autonomous buoys. However,
-    understanding of the spatial distribution and time evolution of PAR for
-    larger regions and over longer time periods requires estimates of light
-    transmission through snow and sea ice from radiative transfer models. Even
-    intensive and observation rich field campaigns such as MOSAiC can only
-    collect measurements from a limited number of measurement points over
-    selected periods of time. Radiative transfer models can be used to "fill
-    in" gaps in the under ice light field, enabling observations of the
-    atmosphere, snow and ice characteristics, oceanography and biology
-    collected at distributed locations to be combined.
+    Sunlight transmitted through snow and sea ice to the upper ocean
+    plays an important role in regulating biological activity in Polar
+    regions, and determining the timing of initiations of algal and
+    phytoplankton blooms.  Measurements of under-ice
+    photosynthetically active radiation (PAR) are available from field
+    campaigns and from autonomous buoys. However, understanding of the
+    spatial distribution and time evolution of PAR for larger regions
+    and over longer time periods requires estimates of light
+    transmission through snow and sea ice from radiative transfer
+    models. Even intensive and observation rich field campaigns such
+    as MOSAiC can only collect measurements from a limited number of
+    measurement points over selected periods of time. Radiative
+    transfer models can be used to "fill in" gaps in the under ice
+    light field, enabling observations of the atmosphere, snow and ice
+    characteristics, oceanography and biology collected at distributed
+    locations to be combined.  However, many radiative transfer codes
+    are not simple to run, and are often written in compiled
+    languages.  Simple to use interfaces to these codes greatly
+    simplify use, increasing accessibility to a wider user-base.
 
   \end{block}
 
@@ -176,14 +180,20 @@
     scripts.  The original Fortran code was modified to allow input
     parameters and results to be passed between compiled Fortran
     routines and the Python wrapper directly, without the need for
-    input and output files.  This was done using the \pyth{ctypes}, a
+    input and output files.  This was done using \pyth{ctypes}, a
     foreign function library for Python.  The modified fortran code
-    was compiled as a shared library.  \pyth{ctypes} data types were
-    defined to allow the Python Wrapper code to access data in Fortran
-    \pyth{COMMON BLOCKS}.
-
+    was compiled as a shared library using \pyth{gfortran}.
+    \pyth{ctypes} data types were defined to allow the Python Wrapper
+    code to access data in Fortran \pyth{COMMON BLOCKS}.
    
   \end{exampleblock}
+
+  \begin{block}{References}
+
+    \nocite{*}
+    \footnotesize{\bibliographystyle{plain}\bibliography{poster}}
+
+  \end{block}
 
 \end{column}
 
@@ -289,13 +299,6 @@
   \end{block}
 
   
-  \begin{block}{References}
-
-    \nocite{*}
-    \footnotesize{\bibliographystyle{plain}\bibliography{poster}}
-
-  \end{block}
-
 \end{column}
 \separatorcolumn
 
