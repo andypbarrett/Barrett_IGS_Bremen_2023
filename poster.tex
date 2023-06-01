@@ -277,69 +277,32 @@
       8 ocean                    27.57          0.00  27.57
     \end{python}
     
-
+    
   \end{exampleblock}
-
-  \begin{block}{Fusce aliquam magna velit}
-
-    Et rutrum ex euismod vel. Pellentesque ultricies, velit in fermentum
-    vestibulum, lectus nisi pretium nibh, sit amet aliquam lectus augue vel
-    velit. Suspendisse rhoncus massa porttitor augue feugiat molestie. Sed
-    molestie ut orci nec malesuada. Sed ultricies feugiat est fringilla
-    posuere.
-
-    \begin{figure}
-      \centering
-      \begin{tikzpicture}
-        \begin{axis}[
-            scale only axis,
-            no markers,
-            domain=0:2*pi,
-            samples=100,
-            axis lines=center,
-            axis line style={-},
-            ticks=none]
-          \addplot[red] {sin(deg(x))};
-          \addplot[blue] {cos(deg(x))};
-        \end{axis}
-      \end{tikzpicture}
-      \caption{Another figure caption.}
-    \end{figure}
-
-  \end{block}
 
   \begin{block}{Estimates of Under Ice Sunlight for MOSAiC ice thickness transects}
 
-    Nulla eget sem quam. Ut aliquam volutpat nisi vestibulum convallis. Nunc a
-    lectus et eros facilisis hendrerit eu non urna. Interdum et malesuada fames
-    ac ante \textit{ipsum primis} in faucibus. Etiam sit amet velit eget sem
-    euismod tristique. Praesent enim erat, porta vel mattis sed, pharetra sed
-    ipsum. Morbi commodo condimentum massa, \textit{tempus venenatis} massa
-    hendrerit quis. Maecenas sed porta est. Praesent mollis interdum lectus,
-    sit amet sollicitudin risus tincidunt non.
+    We use ice thickness, snow depths and pond depths measured during
+    the MOSAiC expedition from Magnaprobe snow and melt pond depth
+    measurements from the 2019-2020 MOSAiC expedition
+    (https://doi.org/10.1594/PANGAEA.937781) @Itkinetaliceandsnowdata.
+    Snow depths and pond depths were measured using Magnaprobe
+    automatic snow depth probes along established transects regularly
+    during the expedition.  Ice thickness was estimated by subtracting
+    snow depths from combined snow and ice thicknesses measured using
+    the GEM-2 electromagnetic induction instrument.  Ice thicknesses
+    and snow depths are available at 1 m to 3 m spacing along
+    transects.
 
-    Etiam sit amet tempus lorem, aliquet condimentum velit. Donec et nibh
-    consequat, sagittis ex eget, dictum orci. Etiam quis semper ante. Ut eu
-    mauris purus. Proin nec consectetur ligula. Mauris pretium molestie
-    ullamcorper. Integer nisi neque, aliquet et odio non, sagittis porta justo.
+    \pyth{SeaIceRT} uses ice thickness, and snow depth or pond depths
+    to estimate radiative flux at the ice-ocean interface, along with
+    surface albedo, and other variables.
 
-    \begin{itemize}
-      \item \textbf{Sed consequat} id ante vel efficitur. Praesent congue massa
-        sed est scelerisque, elementum mollis augue iaculis.
-        \begin{itemize}
-          \item In sed est finibus, vulputate
-            nunc gravida, pulvinar lorem. In maximus nunc dolor, sed auctor eros
-            porttitor quis.
-          \item Fusce ornare dignissim nisi. Nam sit amet risus vel lacus
-            tempor tincidunt eu a arcu.
-          \item Donec rhoncus vestibulum erat, quis aliquam leo
-            gravida egestas.
-        \end{itemize}
-      \item \textbf{Sed luctus, elit sit amet} dictum maximus, diam dolor
-        faucibus purus, sed lobortis justo erat id turpis.
-      \item \textbf{Pellentesque facilisis dolor in leo} bibendum congue.
-        Maecenas congue finibus justo, vitae eleifend urna facilisis at.
-    \end{itemize}
+    \begin{figure}[h]
+      \includegraphics[width=0.9\textwidth]{radiative_transfer.PS122-5_62-241}
+      \caption{Shortwave radiative flux at the ice-ocean interface, surface downwelling shortwave radiation and albedo estimated by \pyth{SeaIceRT}, along with ice thickness, snow depth and pond depth}
+    \end{figure}
+      
 
   \end{block}
 
