@@ -143,65 +143,47 @@
 
   \begin{block}{The Delta-Eddington Radiative Transfer Model}
 
-    This block catches your eye, so \textbf{important stuff} should probably go
-    here.
-
-    Curabitur eu libero vehicula, cursus est fringilla, luctus est. Morbi
-    consectetur mauris quam, at finibus elit auctor ac. Aliquam erat volutpat.
-    Aenean at nisl ut ex ullamcorper eleifend et eu augue. Aenean quis velit
-    tristique odio convallis ultrices a ac odio.
-
-    \begin{itemize}
-      \item \textbf{Fusce dapibus tellus} vel tellus semper finibus. In
-        consequat, nibh sed mattis luctus, augue diam fermentum lectus.
-      \item \textbf{In euismod erat metus} non ex. Vestibulum luctus augue in
-        mi condimentum, at sollicitudin lorem viverra.
-      \item \textbf{Suspendisse vulputate} mauris vel placerat consectetur.
-        Mauris semper, purus ac hendrerit molestie, elit mi dignissim odio, in
-        suscipit felis sapien vel ex.
-    \end{itemize}
-
-    Aenean tincidunt risus eros, at gravida lorem sagittis vel. Vestibulum ante
-    ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.
-
+    The Delta-Eddington (also $\delta$-Eddington) model is a multiple
+    scattering parameterization of radiative transfer that uses
+    Inherent Optical Properties (IOP) (extinction coefficients, single
+    scattering albedo, and asymmetry parameter) for snow, ice and
+    other absorbers, along with snow depth, ice thickness and pond
+    depth, and incident radiation to calculate albedo, internal
+    absorption and light transmission to the upper ocean.  Radiation
+    calculations are made for direct and diffuse components of visible
+    ($200 \mathrm{nm} - 700 \mathrm{nm}$) and near-infrared ($700
+    \mathrm{nm} - 5000 \mathrm{nm}$) solar radiation.  The sea ice
+    column consists of snow covered ice, ponded ice or bare ice.  Snow
+    and melt ponds are represented as two layers, of which the upper
+    layer in both cases is a surface scattering layer.  Sea ice is
+    represented as five layers, with the top layer being a ice surface
+    scattering layer.  Refraction of incident radiation at pond water
+    surfaces and the interface between the ice SSL and underlying ice
+    is accounted for by including a refractive (Fresnel) layer.  A
+    complete description of the Delta-Eddington model is described in
+    \cite{briegleb_delta-eddington_2007}.
+    
   \end{block}
 
- \begin{block}{Nullam vel erat at velit convallis laoreet}
+  \begin{exampleblock}{Technical details}
 
-    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-    inceptos himenaeos. Phasellus libero enim, gravida sed erat sit amet,
-    scelerisque congue diam. Fusce dapibus dui ut augue pulvinar iaculis.
+    The original program \pyth{1D_SIR_DE} is a stand alone version of
+    the CESM3 radiative transfer code and is written in a mixture of
+    Fortran 77 and Fortran 95.  Parameters are defined in an input
+    text file and results written to an output file.  The motivation
+    for writing a Python wrapper for the code, was to allow model runs
+    from interactive python interpretters, executable notebooks and
+    scripts.  The original Fortran code was modified to allow input
+    parameters and results to be passed between compiled Fortran
+    routines and the Python wrapper directly, without the need for
+    input and output files.  This was done using the \pyth{ctypes}, a
+    foreign function library for Python.  The modified fortran code
+    was compiled as a shared library.  \pyth{ctypes} data types were
+    defined to allow the Python Wrapper code to access data in Fortran
+    \pyth{COMMON BLOCKS}.
 
-    \begin{table}
-      \centering
-      \begin{tabular}{l r r c}
-        \toprule
-        \textbf{First column} & \textbf{Second column} & \textbf{Third column} & \textbf{Fourth} \\
-        \midrule
-        Foo & 13.37 & 384,394 & $\alpha$ \\
-        Bar & 2.17 & 1,392 & $\beta$ \\
-        Baz & 3.14 & 83,742 & $\delta$ \\
-        Qux & 7.59 & 974 & $\gamma$ \\
-        \bottomrule
-      \end{tabular}
-      \caption{A table caption.}
-    \end{table}
-
-    Donec quis posuere ligula. Nunc feugiat elit a mi malesuada consequat. Sed
-    imperdiet augue ac nibh aliquet tristique. Aenean eu tortor vulputate,
-    eleifend lorem in, dictum urna. Proin auctor ante in augue tincidunt
-    tempor. Proin pellentesque vulputate odio, ac gravida nulla posuere
-    efficitur. Aenean at velit vel dolor blandit molestie. Mauris laoreet
-    commodo quam, non luctus nibh ullamcorper in. Class aptent taciti sociosqu
-    ad litora torquent per conubia nostra, per inceptos himenaeos.
-
-    Nulla varius finibus volutpat. Mauris molestie lorem tincidunt, iaculis
-    libero at, gravida ante. Phasellus at felis eu neque suscipit suscipit.
-    Integer ullamcorper, dui nec pretium ornare, urna dolor consequat libero,
-    in feugiat elit lorem euismod lacus. Pellentesque sit amet dolor mollis,
-    auctor urna non, tempus sem.
-
-  \end{block}
+   
+  \end{exampleblock}
 
 \end{column}
 
